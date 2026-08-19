@@ -24,9 +24,27 @@ elif (attack == 3):
 
 if player == 1:
     hero = Wombat()
+    print("1. Tackle")
+    print("2. Headbutt")
+    print("3. Double-Edge")
+    print("4. Quick Attack")
+    move = int(input("Select your battle move [1-4]: "))
+    if move == 1:
+        target.hit_points -= hero.tackle
+        print(f"You hit your target for {hero.tackle} damage. Your target's hit points are now {target.hit_points}")
 elif player == 2:
     hero == Pelican()
+    print("1. Hurricane")
+    print("2. Scald")
+    print("3. Wide Guard")
+    print("4. Protect")
+    move = int(input("Select your battle move [1-4]: "))
 elif player == 3:
     hero = Starfish()
+    print("1. Surf")
+    print("2. Psychic")
+    print("3. Thunderbolt")
+    print("4. Ice Beam")
+    move = int(input("Select your battle move [1-4]: "))
 
 print(hero)
