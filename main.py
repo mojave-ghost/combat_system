@@ -25,7 +25,7 @@ elif opponent == 2:
 elif opponent == 3: 
     enemy = Starfish()
 
-def battle():
+def main():
     while True:
         attack(hero, enemy)
         random_attack(enemy, hero)    
@@ -39,4 +39,4 @@ def battle():
         else:
             continue
 
-battle()
+main()
