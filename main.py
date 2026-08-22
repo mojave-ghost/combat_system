@@ -32,9 +32,9 @@ def main():
 
         if hero.hit_points <= 0 or enemy.hit_points <= 0:
             if hero.hit_points <= 0:
-                print("You have been defeated!")
+                print("\n You have been defeated!")
             elif enemy.hit_points <= 0:
-                print("You have defeated your opponent!")
+                print("\n You have defeated your opponent!")
             break
         else:
             continue
