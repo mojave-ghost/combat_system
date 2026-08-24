@@ -1,7 +1,7 @@
 from heroes import Wombat, Pelican, Starfish
 from random_attack import random_attack
 from attack import attack
-import hero
+import save
 
 
 # Select your hero
@@ -17,12 +17,17 @@ def select_hero():
     elif player == 3: 
         hero = Starfish()
     print()
+
     # Name your hero option 
     is_named = input("Do you want to name your hero? [y/n]")
     if is_named == "y" or is_named == "Y":
         name = input("Name your hero: ")
     elif is_named.lower() == "n":
         name = "Your hero"
+
+    # Open a file in write mode ('w') and save the data
+    with open("save.py", "w") as file:
+        file.write(f'name="{name}"\n')
 
     return hero, name
 
