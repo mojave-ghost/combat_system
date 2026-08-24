@@ -13,6 +13,15 @@ elif player == 2:
     hero = Pelican()
 elif player == 3: 
     hero = Starfish()
+print()
+
+# Name your hero option 
+is_named = input("Do you want to name your hero? [y/n]")
+if is_named == "y" or is_named == "Y":
+    name = input("Name your hero: ")
+elif is_named.lower() == "n":
+    name = "Your hero"
+
 # Select your opponent
 print("1. Wombat")
 print("2. Pelican")
@@ -27,8 +36,8 @@ elif opponent == 3:
 
 def main():
     while True:
-        attack(hero, enemy)
-        random_attack(enemy, hero)    
+        attack(hero, enemy, name)
+        random_attack(enemy, hero, name)    
 
         if hero.hit_points <= 0 or enemy.hit_points <= 0:
             if hero.hit_points <= 0:
