@@ -1,4 +1,4 @@
-import heroes
+from heroes import Wombat, Pelican, Starfish
 from random_attack import random_attack
 from attack import attack
 

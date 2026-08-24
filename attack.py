@@ -12,24 +12,24 @@ def attack(hero, opponent, name):
         print("\n")
 
         if move == 1:
-            opponent.hit_points -= hero.tackle
+            opponent.hit_points -= hero.moves[0]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.tackle} damage. Your target's hit points are now {opponent.hit_points}.")
+            print(f"{name} hit the enemy target for {hero.moves[0]['damage']} damage. Your target's hit points are now {opponent.hit_points}.")
             print("********************************************************************************************************* \n")
         elif move == 2:
-            opponent.hit_points -= hero.headbutt
+            opponent.hit_points -= hero.moves[1]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.headbutt} damage. Your target's hit points are now {opponent.hit_points}.")
+            print(f"{name} hit the enemy target for {hero.moves[1]['damage']} damage. Your target's hit points are now {opponent.hit_points}.")
             print("********************************************************************************************************* \n")
         elif move == 3:
-            opponent.hit_points -= hero.double_edge
+            opponent.hit_points -= hero.moves[2]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.double_edge} damage. Your target's hit points are now {opponent.hit_points}.")
+            print(f"{name} hit the enemy target for {hero.moves[2]['damage']} damage. Your target's hit points are now {opponent.hit_points}.")
             print("********************************************************************************************************* \n")
         elif move == 4:
-            opponent.hit_points -= hero.quick_attack
+            opponent.hit_points -= hero.moves[2]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.quick_attack} damage. Your target's hit points are now {opponent.hit_points}.")
+            print(f"{name} hit the enemy target for {hero.moves[2]['damage']} damage. Your target's hit points are now {opponent.hit_points}.")
             print("********************************************************************************************************* \n")
     elif isinstance(hero, Pelican):
         print("1. Hurricane")
@@ -38,24 +38,24 @@ def attack(hero, opponent, name):
         print("4. Protect")
         move = int(input("Select your battle move [1-4]: "))
         if move == 1:
-            opponent.hit_points -= hero.hurricane
+            opponent.hit_points -= hero.moves[0]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.hurricane} damage. Your target's hit points are now {opponent.hit_points}.")
+            print(f"{name} hit the enemy target for {hero.moves[0]['damage']} damage. Your target's hit points are now {opponent.hit_points}.")
             print("********************************************************************************************************* \n")
         elif move == 2:
-            opponent.hit_points -= hero.scald
+            opponent.hit_points -= hero.moves[1]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.scald} damage. Your target's hit points are now {opponent.hit_points}.")
+            print(f"{name} hit the enemy target for {hero.moves[1]['damage']} damage. Your target's hit points are now {opponent.hit_points}.")
             print("********************************************************************************************************* \n")
         elif move == 3:
-            opponent.hit_points -= hero.wide_guard
+            opponent.hit_points -= hero.moves[2]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.wide_guard} damage. Your target's hit points are now {opponent.hit_points}.")
+            print(f"{name} hit the enemy target for {hero.moves[2]['damage']} damage. Your target's hit points are now {opponent.hit_points}.")
             print("********************************************************************************************************* \n")
         elif move == 4:
-            opponent.hit_points -= hero.protect
+            opponent.hit_points -= hero.moves[3]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.protect} damage. Your target's hit points are now {opponent.hit_points}.")
+            print(f"{name} hit the enemy target for {hero.moves[3]['damage']} damage. Your target's hit points are now {opponent.hit_points}.")
             print("********************************************************************************************************* \n")
     elif isinstance(hero, Starfish):
         print("1. Surf")
@@ -64,22 +64,22 @@ def attack(hero, opponent, name):
         print("4. Ice Beam")
         move = int(input("Select your battle move [1-4]: "))
         if move == 1:
-            opponent.hit_points -= hero.surf
+            opponent.hit_points -= hero.moves[0]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.surf} damage. Your target's hit points are now {opponent.hit_points}." )
+            print(f"{name} hit the enemy target for {hero.moves[0]['damage']} damage. Your target's hit points are now {opponent.hit_points}." )
             print("********************************************************************************************************* \n")
         elif move == 2:
-            opponent.hit_points -= hero.psychic
+            opponent.hit_points -= hero.moves[1]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.psychic} damage. Your target's hit points are now {opponent.hit_points}.")
+            print(f"{name} hit the enemy target for {hero.moves[1]['damage']} damage. Your target's hit points are now {opponent.hit_points}.")
             print("********************************************************************************************************* \n")
         elif move == 3:
-            opponent.hit_points -= hero.thunderbolt
+            opponent.hit_points -= hero.moves[2]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.thunderbolt} damage. Your target's hit points are now {opponent.hit_points}.")
+            print(f"{name} hit the enemy target for {hero.moves[2]['damage']} damage. Your target's hit points are now {opponent.hit_points}.")
             print("********************************************************************************************************* \n")
         elif move == 4:
-            opponent.hit_points -= hero.ice_beam
+            opponent.hit_points -= hero.moves[3]['damage']
             print("*********************************************************************************************************")
-            print(f"{name} hit the enemy target for {hero.ice_beam} damage. Your target's hit points are now {opponent.hit_points}.")
+            print(f"{name} hit the enemy target for {hero.moves[3]['damage']} damage. Your target's hit points are now {opponent.hit_points}.")
             print("********************************************************************************************************* \n")
