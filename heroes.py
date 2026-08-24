@@ -13,7 +13,7 @@ class Pelican:
         {"name": "Hurricane", "damage": 10},
         {"name": "Scald", "damage": 25},
         {"name": "Wide Guard", "damage": 60},
-        {"name": "Protect", "damage": 17.5}
+        {"name": "Protect", "damage": 0}
     ]
 
 class Starfish:
