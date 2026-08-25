@@ -1,8 +1,37 @@
+import json
 from heroes import Wombat, Pelican, Starfish
 from random_attack import random_attack
 from attack import attack
-import save
 
+HERO_CLASSES = {
+        "Wombat": Wombat,
+        "Pelican": Pelican,
+        "Starfish": Starfish
+}
+
+def save_game(hero, name):
+    save_data = {
+        "name": name,
+        "class_type": hero.__class__.__name__
+    }
+    with open("save_data.json", "w") as file:
+        json.dump(save_data, file)
+    print("Game saved successfully!\n")
+
+def load_game():
+    try:
+        with open("save_data.json", "r") as file:
+            data = json.load(file)
+
+        name = data["name"]
+        class_name = data["class_type"]
+
+        # instantiate the correct hero class from the saved string name
+        hero = HERO_CLASSES[class_name]()
+        return hero, name
+    except FileNotFoundError:
+        print("No save file found! Starting new game instead.\n")
+        return select_hero()
 
 # Select your hero
 def select_hero():
@@ -25,12 +54,10 @@ def select_hero():
     elif is_named.lower() == "n":
         name = "Your hero"
 
-    # Open a file in write mode ('w') and save the data
-    with open("save.py", "w") as file:
-        file.write(f'name="{name}"\n')
-
+    save_game(hero, name)
     return hero, name
 
+"""
 def select_opponent():
     # Select your opponent
     print("1. Wombat")
@@ -57,7 +84,8 @@ def battle(hero, enemy, name):
             break
         else:
             continue
-
+"""
+            
 def main():
     # Start the game
     print("****************************************")
@@ -71,12 +99,9 @@ def main():
 
     if game_state == 1:
         hero, name = select_hero()
-        enemy = select_opponent()
-        battle(hero, enemy, name) 
     elif game_state == 2:
-        name = hero.name
-        class_type = hero.class_type
-        print(name)
-        print(class_type)
+        hero, name = load_game()
+
+    print(f"\nActive Hero: {name} ({hero.__class__.__name__})\n")
 
 main()
