@@ -2,20 +2,20 @@ from attack import attack
 from random_attack import random_attack
 from heroes import Wombat, Pelican, Starfish
 
-def select_opponent():
+
+def battle(hero, name):
     # Select your opponent
     print("1. Wombat")
     print("2. Pelican")
     print("3. Starfish")
     opponent = int(input("Select your opponent [1-3]: "))
     if opponent == 1:
-        return Wombat()
+        enemy = Wombat()
     elif opponent == 2:
-        return Pelican()
+        enemy = Pelican()
     elif opponent == 3: 
-        return Starfish()
+        enemy = Starfish()
 
-def battle(hero, enemy, name):
     while True:
         attack(hero, enemy, name)
         random_attack(enemy, hero, name)    
