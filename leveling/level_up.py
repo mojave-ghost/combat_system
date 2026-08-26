@@ -1,4 +1,4 @@
-import get_exp
+import leveling.get_exp as get_exp
 
 def level_up (won, opponent_level, current_exp):
     # Calculate earned experience (preventing division or zero exp issues)
