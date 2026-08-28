@@ -1,1 +1,7 @@
-{"name": "Grey", "class_type": "Wombat"}
+{
+    "name": "Grey",
+    "class_type": "Wombat",
+    "inventory": [
+        "Potion"
+    ]
+}

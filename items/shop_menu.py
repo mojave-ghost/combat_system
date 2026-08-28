@@ -1,5 +1,5 @@
-import json
 from . import item_data
+from .add_to_inventory import add_to_inventory
 
 def shop_menu():
     print("\nITEMS")
@@ -15,6 +15,7 @@ def shop_menu():
     print(f"{item_data.shop_catalog_level1[4]['description']}")
 
     try:
+        # Hard code catalog length = 5
         choice = int(input("\nBUY AN ITEM [1-5] OR exit [0]: "))
         if choice == 1:
             print(f"You bought a {item_data.shop_catalog_level1[0]['name']}.")
@@ -31,8 +32,13 @@ def shop_menu():
     except ValueError:
         choice = 0
 
-
-
+    # buy shop item and add to save_data.json
+    if 1 <= choice <= 5:
+        selected_item = item_data.shop_catalog_level1[choice - 1]
+        print(f"\n You have bought a {selected_item['name']}.")
+        add_to_inventory(selected_item)
+    else:
+        print("You have exited the item shop.")
 
     
 
