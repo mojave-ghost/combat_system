@@ -2,6 +2,8 @@
     "name": "Grey",
     "class_type": "Wombat",
     "inventory": [
-        "Potion"
+        "Potion",
+        "Super Potion",
+        "Poison Heal"
     ]
 }
