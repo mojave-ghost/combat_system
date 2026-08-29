@@ -8,6 +8,12 @@ def adventure_menu(hero, name):
             choice = int(input("Choose your adventure [1-3]: "))
         except ValueError:
             print("Invalid input! Please enter a number.")
+            """
+            Add 'continue' because:
+                Variable Retention: Because int("cat") fails, choice is never overwritten and retains its previous value from the prior menu loop iteration (which was 2).
+                Missing continue: Without a CONTINUE statement in your except ValueError: block, Python catches the error, prints "Invalid input!", and then proceeds straight down to evaluate your if / elif statements.
+            """
+            continue
 
         if choice == 1:
             battle.battle(hero, name)
@@ -17,4 +23,4 @@ def adventure_menu(hero, name):
             print("Thanks for playing!")
             break
         else:
-            print("Please enter a valide option")
+            print("Please enter a valid option")
