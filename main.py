@@ -74,6 +74,7 @@ def main():
 
     print(f"\nActive Hero: {name} ({hero.__class__.__name__})\n")
 
+    
     adventure_menu.adventure_menu(hero, name)
 
 main()

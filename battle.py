@@ -1,6 +1,7 @@
 from attack import attack
 from random_attack import random_attack
 from heroes import Wombat, Pelican, Starfish
+from .leveling import level_up
 
 
 def battle(hero, name):
@@ -25,6 +26,8 @@ def battle(hero, name):
                 print("\n You have been defeated!")
             elif enemy.hit_points <= 0:
                 print("\n You have defeated your opponent!")
+                print("You have gained _ exp.")
+                level_up.level_up(True, 5, 5)
             break
         else:
             continue
